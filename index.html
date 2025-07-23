@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sabtian Secret Photo</title>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+    img {
+      display: none;
+      margin-top: 30px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h2>🔒 This photo is locked</h2>
+  <p>Hint: ikan apa yg gabisa berenang?</p>
+
+  <input type="text" id="codeInput" placeholder="Enter the code" />
+  <button onclick="unlock()">Unlock</button>
+
+  <div>
+    <img id="secretImage" src="sabtian-secret-photo.jpeg" alt="Sabtian Secret Photo">
+  </div>
+
+  <script>
+    function unlock() {
+      const code = document.getElementById("codeInput").value.toLowerCase().trim();
+      if (code === "ikan goreng") {
+        document.getElementById("secretImage").style.display = "block";
+      } else {
+        alert("Wrong code. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>
