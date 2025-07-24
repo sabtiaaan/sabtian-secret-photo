@@ -51,8 +51,9 @@
 
   <script>
     function unlock() {
-      const code = document.getElementById("codeInput").value.toLowerCase().trim();
-      if (code === "ikan goreng") {
+      const code = document.getElementById("codeInput").value.toLowerCase().replace(/\s/g, "");
+      const validCodes = ["ikangoreng"];
+      if (validCodes.includes(code)) {
         document.getElementById("secretImage").style.display = "block";
       } else {
         alert("Wrong code. Try again.");
